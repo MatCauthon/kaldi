@@ -59,3 +59,11 @@ for x in exp/{tri4b_dnn_mpe,tri4b_dnn_dae}/decode_word_0db/{white,car,cafe}; do 
 %WER 53.38 [ 43308 / 81139, 907 ins, 4164 del, 38237 sub ] exp/tri4b_dnn_dae/decode_word_0db/cafe/wer_12
 
 exit 0
+
+for x in exp/nnet3_tdnn_pnorm/{decode_test_word,decode_test_phone}; do [ -d $x ] && grep WER $x/wer_* | utils/best_wer.sh; done
+#clean tdnn model
+#word task and phone task
+%WER 22.20 [ 18016 / 81139, 356 ins, 564 del, 17096 sub ] exp/nnet3_tdnn_pnorm/decode_test_word/wer_7
+%WER 8.87 [ 32094 / 362027, 7180 ins, 5983 del, 18931 sub ] exp/nnet3_tdnn_pnorm/decode_test_phone/wer_4
+
+
