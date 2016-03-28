@@ -26,28 +26,31 @@ fi
 if [ $stage -le 8 ]; then
 
     steps/nnet3/train_tdnn.sh --stage $train_stage \
-    --num-epochs 8 --num-jobs-initial 2 --num-jobs-final 14 \
-    --splice-indexes "-1,0,1  -2,0,2  -2,0,2 0" \
-    --feat-type raw \
-    --cmvn-opts "--norm-means=true --norm-vars=false" \
-    --use-gpu true \
-    --io-opts "-tc 12" \
-    --pnorm-input-dim 2000 \
-    --pnorm-output-dim 250 \
-    --initial-effective-lrate 0.008 --final-effective-lrate 0.0008 \
-    --cmd "$decode_cmd" \
-    data/fbank/train data/lang exp/tri4b_ali $dir  || exit 1;
+      --num-epochs 8 --num-jobs-initial 2 --num-jobs-final 14 \
+      --splice-indexes "-1,0,1  -2,0,2  -2,0,2 0" \
+      --feat-type raw \
+      --cmvn-opts "--norm-means=true --norm-vars=false" \
+      --use-gpu true \
+      --pnorm-input-dim 2000 \
+      --pnorm-output-dim 250 \
+      --initial-effective-lrate 0.008 --final-effective-lrate 0.0008 \
+      --cmd "$decode_cmd" \
+      data/fbank/train data/lang exp/tri4b_ali $dir  || exit 1;
 fi
 
 #tdnn decode
 if [ $stage -le 9 ]; then
     (
      steps/nnet3/decode.sh --nj $nj --cmd "$decode_cmd" \
-       $gmmdir/graph.word data/fbank/test $dir/decode_test_word || exit 1;
+       --scoring_opts "--min_lmwt 4 --max_lmwt 15"  \
+       $gmmdir/graph_word data/fbank/test  \
+       $dir/decode_test_word || exit 1;
     )&
     (
      steps/nnet3/decode.sh --nj $nj --cmd "$decode_cmd" \
-       $gmmdir/graph.phone data/fbank/test.ph $dir/decode_test_phone || exit 1;
+       --scoring_opts "--min_lmwt 4 --max_lmwt 15"  \
+       $gmmdir/graph_phone data/fbank/test_phone \
+       $dir/decode_test_phone || exit 1;
     )&
 
 fi
