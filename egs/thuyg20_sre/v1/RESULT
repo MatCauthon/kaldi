@@ -1,0 +1,171 @@
+#!/bin/bash
+
+for i in cosine lda plda;do echo "$i" ;cat results/score_${i}_norm*female*cleantest;done
+#clean Tmatrix  and noise 0db Tmatrix
+#clean training data and clean test data
+#female
+
+cosine
+score_cosine_norm_10s_female_cleanT_cleantest EER: 9.19
+score_cosine_norm_20s_female_cleanT_cleantest EER: 6.71
+score_cosine_norm_30s_female_cleanT_cleantest EER: 5.106
+
+lda
+score_lda_norm_10s_female_cleanT_cleantest EER: 6.856
+score_lda_norm_20s_female_cleanT_cleantest EER: 5.252
+score_lda_norm_30s_female_cleanT_cleantest EER: 3.647
+
+plda
+score_plda_norm_10s_female_cleanT_cleantest EER: 4.887
+score_plda_norm_10s_female_car0dbT_cleantest EER: 9.993
+score_plda_norm_10s_female_cafe0dbT_cleantest EER: 10.65
+score_plda_norm_10s_female_white0dbT_cleantest EER: 10.28
+
+score_plda_norm_20s_female_cleanT_cleantest EER: 3.72
+score_plda_norm_20s_female_car0dbT_cleantest EER: 8.096
+score_plda_norm_20s_female_cafe0dbT_cleantest EER: 9.409
+score_plda_norm_20s_female_white0dbT_cleantest EER: 8.68
+
+score_plda_norm_30s_female_cleanT_cleantest EER: 2.845
+score_plda_norm_30s_female_car0dbT_cleantest EER: 7.075
+score_plda_norm_30s_female_cafe0dbT_cleantest EER: 7.732
+score_plda_norm_30s_female_white0dbT_cleantest EER: 7.148
+
+for i in cosine lda plda;do echo "$i" ;cat results/score_${i}_norm*_male*cleantest;done
+#clean Tmatrix  and noise 0db Tmatrix
+#clean training data and clean test data
+#male
+
+cosine
+score_cosine_norm_10s_male_cleanT_cleantest EER: 11.72
+score_cosine_norm_20s_male_cleanT_cleantest EER: 9.394
+score_cosine_norm_30s_male_cleanT_cleantest EER: 7.576
+
+lda
+score_lda_norm_10s_male_cleanT_cleantest EER: 7.172
+score_lda_norm_20s_male_cleanT_cleantest EER: 5.96
+score_lda_norm_30s_male_cleanT_cleantest EER: 4.949
+plda
+
+score_plda_norm_10s_male_cleanT_cleantest EER: 6.162
+score_plda_norm_10s_male_car0dbT_cleantest EER: 12.73
+score_plda_norm_10s_male_cafe0dbT_cleantest EER: 12.22
+score_plda_norm_10s_male_white0dbT_cleantest EER: 14.34
+
+score_plda_norm_20s_male_cleanT_cleantest EER: 5.051
+score_plda_norm_20s_male_car0dbT_cleantest EER: 11.72
+score_plda_norm_20s_male_cafe0dbT_cleantest EER: 11.11
+score_plda_norm_20s_male_white0dbT_cleantest EER: 13.33
+
+score_plda_norm_30s_male_cleanT_cleantest EER: 4.141
+score_plda_norm_30s_male_car0dbT_cleantest EER: 9.495
+score_plda_norm_30s_male_cafe0dbT_cleantest EER: 9.798
+score_plda_norm_30s_male_white0dbT_cleantest EER: 11.72
+
+for i in cosine lda plda;do echo "$i" ;cat results/score_${i}_norm*female*0dbtest;done
+
+#clean Tmatrix and noise 0db Tmatrix
+#training data and test data with 0db noise
+#female
+
+cosine
+score_cosine_norm_10s_female_car0dbT_car0dbtest EER: 15.46
+score_cosine_norm_10s_female_cafe0dbT_cafe0dbtest EER: 21.59
+score_cosine_norm_10s_female_white0dbT_white0dbtest EER: 19.47
+
+score_cosine_norm_20s_female_car0dbT_car0dbtest EER: 13.2
+score_cosine_norm_20s_female_cafe0dbT_cafe0dbtest EER: 17.43
+score_cosine_norm_20s_female_white0dbT_white0dbtest EER: 14.81
+
+score_cosine_norm_30s_female_car0dbT_car0dbtest EER: 11.09
+score_cosine_norm_30s_female_cafe0dbT_cafe0dbtest EER: 14.59
+score_cosine_norm_30s_female_white0dbT_white0dbtest EER: 11.82
+
+lda
+score_lda_norm_10s_female_car0dbT_car0dbtest EER: 8.68
+score_lda_norm_10s_female_cafe0dbT_cafe0dbtest EER: 13.06
+score_lda_norm_10s_female_white0dbT_white0dbtest EER: 14.08
+
+score_lda_norm_20s_female_car0dbT_car0dbtest EER: 7.44
+score_lda_norm_20s_female_cafe0dbT_cafe0dbtest EER: 10.21
+score_lda_norm_20s_female_white0dbT_white0dbtest EER: 10.87
+
+score_lda_norm_30s_female_car0dbT_car0dbtest EER: 5.908
+score_lda_norm_30s_female_cafe0dbT_cafe0dbtest EER: 8.315
+score_lda_norm_30s_female_white0dbT_white0dbtest EER: 8.753
+
+plda
+score_plda_norm_10s_female_cleanT_car0dbtest EER: 13.35
+score_plda_norm_10s_female_cleanT_cafe0dbtest EER: 17.65
+score_plda_norm_10s_female_cleanT_white0dbtest EER: 13.42
+score_plda_norm_10s_female_car0dbT_car0dbtest EER: 5.689
+score_plda_norm_10s_female_cafe0dbT_cafe0dbtest EER: 8.972
+score_plda_norm_10s_female_white0dbT_white0dbtest EER: 11.38
+
+score_plda_norm_20s_female_cleanT_car0dbtest EER: 11.6
+score_plda_norm_20s_female_cleanT_cafe0dbtest EER: 14.59
+score_plda_norm_20s_female_cleanT_white0dbtest EER: 10.94
+score_plda_norm_20s_female_car0dbT_car0dbtest EER: 4.741
+score_plda_norm_20s_female_cafe0dbT_cafe0dbtest EER: 7.44
+score_plda_norm_20s_female_white0dbT_white0dbtest EER: 9.263
+
+score_plda_norm_30s_female_cleanT_car0dbtest EER: 9.701
+score_plda_norm_30s_female_cleanT_cafe0dbtest EER: 13.06
+score_plda_norm_30s_female_cleanT_white0dbtest EER: 8.972
+score_plda_norm_30s_female_car0dbT_car0dbtest EER: 4.085
+score_plda_norm_30s_female_cafe0dbT_cafe0dbtest EER: 5.981
+score_plda_norm_30s_female_white0dbT_white0dbtest EER: 7.44
+
+for i in cosine lda plda;do echo "$i" ;cat results/score_${i}_norm*_male*0dbtest;done
+
+#clean Tmatrix and noise 0db Tmatrix
+#training data and test data with 0db noise
+#male
+
+cosine
+score_cosine_norm_10s_male_car0dbT_car0dbtest EER: 13.54
+score_cosine_norm_10s_male_cafe0dbT_cafe0dbtest EER: 22.22
+score_cosine_norm_10s_male_white0dbT_white0dbtest EER: 19.6
+
+score_cosine_norm_20s_male_car0dbT_car0dbtest EER: 10.1
+score_cosine_norm_20s_male_cafe0dbT_cafe0dbtest EER: 17.47
+score_cosine_norm_20s_male_white0dbT_white0dbtest EER: 15.15
+
+score_cosine_norm_30s_male_car0dbT_car0dbtest EER: 8.182
+score_cosine_norm_30s_male_cafe0dbT_cafe0dbtest EER: 15.45
+score_cosine_norm_30s_male_white0dbT_white0dbtest EER: 11.01
+
+lda
+score_lda_norm_10s_male_car0dbT_car0dbtest EER: 7.475
+score_lda_norm_10s_male_cafe0dbT_cafe0dbtest EER: 13.74
+score_lda_norm_10s_male_white0dbT_white0dbtest EER: 14.34
+
+score_lda_norm_20s_male_car0dbT_car0dbtest EER: 5.758
+score_lda_norm_20s_male_cafe0dbT_cafe0dbtest EER: 10.51
+score_lda_norm_20s_male_white0dbT_white0dbtest EER: 11.31
+
+score_lda_norm_30s_male_car0dbT_car0dbtest EER: 3.737
+score_lda_norm_30s_male_cafe0dbT_cafe0dbtest EER: 8.485
+score_lda_norm_30s_male_white0dbT_white0dbtest EER: 7.879
+
+plda
+score_plda_norm_10s_male_cleanT_car0dbtest EER: 14.24
+score_plda_norm_10s_male_cleanT_cafe0dbtest EER: 18.18
+score_plda_norm_10s_male_cleanT_white0dbtest EER: 14.55
+score_plda_norm_10s_male_car0dbT_car0dbtest EER: 6.061
+score_plda_norm_10s_male_cafe0dbT_cafe0dbtest EER: 9.798
+score_plda_norm_10s_male_white0dbT_white0dbtest EER: 12.22
+
+score_plda_norm_20s_male_cleanT_cafe0dbtest EER: 16.16
+score_plda_norm_20s_male_cleanT_car0dbtest EER: 12.22
+score_plda_norm_20s_male_cleanT_white0dbtest EER: 12.22
+score_plda_norm_20s_male_car0dbT_car0dbtest EER: 4.848
+score_plda_norm_20s_male_cafe0dbT_cafe0dbtest EER: 7.374
+score_plda_norm_20s_male_white0dbT_white0dbtest EER: 10.1
+
+score_plda_norm_30s_male_cleanT_car0dbtest EER: 8.788
+score_plda_norm_30s_male_cleanT_cafe0dbtest EER: 13.94
+score_plda_norm_30s_male_cleanT_white0dbtest EER: 9.697
+score_plda_norm_30s_male_car0dbT_car0dbtest EER: 2.929
+score_plda_norm_30s_male_cafe0dbT_cafe0dbtest EER: 5.051
+score_plda_norm_30s_male_white0dbT_white0dbtest EER: 7.374
